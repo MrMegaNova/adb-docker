@@ -6,4 +6,4 @@ After=docker.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/docker pull sorccu/adb:latest
+ExecStart=/usr/bin/docker pull ghcr.io/mrmeganova/adb-docker:latest

@@ -1,4 +1,4 @@
-name: Create docker container on push to main
+name: Build and publish Docker image
 
 on:
   workflow_dispatch:
@@ -8,8 +8,9 @@ on:
   push:
     branches:
       - master
-    tags:
-        - 'v*.*.*'
+  release:
+    types:
+      - published
 
 jobs:
   build:
@@ -45,7 +46,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v6
         with:
-          images: ghcr.io/tiiuae/adb-docker
+          images: ghcr.io/mrmeganova/adb-docker
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}

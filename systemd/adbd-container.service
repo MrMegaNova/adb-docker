@@ -13,4 +13,4 @@ ExecStart=/usr/bin/docker create \
   --privileged \
   --net host \
   -v /dev/bus/usb:/dev/bus/usb \
-  sorccu/adb:latest
+  ghcr.io/mrmeganova/adb-docker:latest
